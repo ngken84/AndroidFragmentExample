@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="btn1Color">#FF70239F</color>
+    <color name="btn2Color">#9e430b</color>
 </resources>
