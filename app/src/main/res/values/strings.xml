@@ -2,7 +2,10 @@
     <string name="app_name">AndroidFragmentExample</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="home_fragment_text">Home Fragment</string>
+    <string name="home_fragment_text">Welcome to my ANDROID FRAGMENT EXAMPLE project.
+    This project is designed to showcase the different functionality of Android Fragments.
+    This first page demonstrates displaying and replacing fragments using Fragment
+    Transactions and replace.</string>
     <string name="profile_fragment_text">Profile Fragment</string>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
         profileFragment = new ProfileFragment();
         homeFragment = new HomeFragment();
 
+        showFragment(homeFragment);
 
         profileBtn = findViewById(R.id.main_prof_btn);
         profileBtn.setOnClickListener(new View.OnClickListener() {
