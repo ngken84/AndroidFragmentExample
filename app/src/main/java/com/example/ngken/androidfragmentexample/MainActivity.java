@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
 
     private ProfileFragment profileFragment;
     private HomeFragment homeFragment;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +24,12 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
         profileFragment = new ProfileFragment();
         homeFragment = new HomeFragment();
 
-        showHomeFragment();
 
         profileBtn = findViewById(R.id.main_prof_btn);
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showProfileFragment();
+                showFragment(profileFragment);
             }
         });
 
@@ -38,29 +37,18 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.O
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showHomeFragment();
+                showFragment(homeFragment);
             }
         });
 
     }
 
-    private void showHomeFragment() {
+    private void showFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        if(homeFragment.isAdded()) {
+        if(fragment.isAdded()) {
             return;
         }
-        transaction.remove(profileFragment);
-        transaction.add(R.id.main_linear, homeFragment);
-        transaction.commit();
-    }
-
-    private void showProfileFragment() {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        if(profileFragment.isAdded()) {
-            return;
-        }
-        transaction.remove(homeFragment);
-        transaction.add(R.id.main_linear, profileFragment);
+        transaction.replace(R.id.main_fragment_container, fragment);
         transaction.commit();
     }
 
